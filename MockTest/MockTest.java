@@ -101,7 +101,7 @@ class MockTest {
 
         freqMap.put(cc,currFreq+1);
      } 
-     System.out.println(freqMap);
+     
 
      for(int i = 0; i<str.length(); i++) {
           
