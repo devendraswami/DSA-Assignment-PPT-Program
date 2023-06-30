@@ -290,7 +290,10 @@ System.out.println();
                 digits[i] = 0; 
             }
         } 
-        return digits; 
+        // if all the elements in the arrays are : 9999999...
+        int newArray[] = new int[digits.length+1];
+        newArray[0] = 1; 
+        return newArray; 
     } 
 
 
