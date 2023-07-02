@@ -1,0 +1,152 @@
+Que1 What is the difference between compiler and interpreter ? 
+
+Answer 
+ 
+ Compiler is a software which takes HLL(High Level Language ) as an input and gives 
+ MLL(Machine Level Language ) as output. complier reads the HLL code in one go. 
+
+ Interpeter is a software which takes HLL as input and gives MLL as output. It reads 
+ the HLL code multiple times. 
+
+performace- 
+
+ 1. compiler will speed up the process but Interpeter will slow down the process. 
+ 2. Compiler will scan the problems in one go but Interpeter will take time . Scan
+    the code line by line according to the instruction. 
+
+
+Question 2. What is the difference between JDK, JRE, and JVM? 
+
+Answer - 
+
+ JDK - It stands for Java Development Kit. To execute java Machine need suitable environment
+       and to provide suitable envinronemet we need to install JDK softwares. 
+
+ JRE - It stand for the Java RunTime Envinronemet. It is responsible to provide suitable 
+       environment. It is installed in the machine when we install JDK software. 
+
+ JVM - JVM stands for java virtual machine. Which is responsible to execute the program 
+       on the basis of Multi Threading. 
+
+
+
+   Q3.How many types of memory areas are allocated by JVM?             
+
+   Answer- The JVM divides its memory into two main catogaries- Heap memory  and 
+            non heap memory. 
+
+
+    Q4.What is JIT compiler? 
+
+    Answer - JIT compiler stands for Just In Time Compiler. It is component of RunTime 
+             Envinronemet which boost the performace of java application by compiling
+             the byte codes to the native machines at RunTime.  
+
+    
+    Q5.What are the various access specifiers in Java? 
+
+    Answer- In java there are four access specifiers that controls the visiblity and 
+            accessiblity of classes, methods and variables. 
+
+            1. public- allows unrestricted access from anywhere in the program. public 
+               members can also be accessed in other packages also. 
+
+            2. private -  allows restricted access in the same class. private members 
+               cannot be inherited by the other classes or subclasses. 
+
+            3. Protected - allows access in the same class where the member is defined. 
+
+            4. Default - allows access in the same Package. 
+
+
+
+           Q6.What is a compiler in Java? 
+
+           Answer - 
+
+           Compiler is software in java Which converts the HLL(High Level Language) to 
+           Bytes Codes. (Low Level Language) So that Machine can understand it. 
+           Bytes Codes are not HLL nor MLL it is mix of these.  
+
+           Bytes code are further compiled by JVM and gives OutPut in MLL. 
+
+
+
+           Q7.Explain the types of variables in Java?
+
+           Answer - 
+
+           There are Different types of Variables in java - 
+
+           1. Local Varibles - 
+
+           Local of are declared inside a method, Constructor, code block  and the scope of Local varible are a the 
+           scope of as the same of method,Constructor , codeblock . 
+
+           2. Instance Varibles - 
+            
+            Instance Varibles are declared outside the method but inside the class. 
+            Each instance class has its own copy of its instance Varibles . 
+
+
+            3. Static Varibles - Static Varibles are declared with a static keyWord. 
+            and shared by instances(objects) . They are initialized with default values. 
+
+            4. Parameters - Parameters are defined inside method Signature. 
+
+
+       
+       Q8.What are the Datatypes in Java?
+
+
+       Answer- 
+
+       Java is Statically typed programming Language. so we have to defined the type of 
+       data when we want to store something. 
+
+       1. Primitive Data Type - 
+        
+        Byte, short  int , long ,float ,double , char, boolean 
+
+
+      2. Reference Data Type 
+
+       Strings , Arrays , Classes 
+
+       3. Derived Data Types - Enum , Interface , Annotations. 
+
+
+       Q9.What are the identifiers in java? 
+
+       Identifiers are the name used to identity of varibles, classes , mehtod. 
+
+       Rules for Indetifiers - 
+        
+        1. Indetifiers must start whth a-z or A-Z or symbols _ or $ is allowed 
+
+        2. After first letter identifiers can also contain 1-9 digits. 
+
+        3. Reserved keywords can not be used as identifies in java. 
+
+        4. Identifiers should me meaningful. 
+
+
+
+        Q10.Explain the architecture of JVM
+
+
+        Answer 
+
+        The Java Virtual Machine (JVM) is responsible for executing Java bytecode. 
+        It consists of the Class Loader, Runtime Data Areas (Method Area, Heap, Java
+         Stack, Native Method Stack, PC Register), Execution Engine
+        (Interpreter and JIT Compiler), and Native Method Interface (JNI).
+        The JVM loads and verifies class files, manages memory, executes bytecode, 
+        and provides a bridge for interacting with native code. It ensures 
+        platform independence and automatic memory management in Java programs.
+
+
+
+ 
+
+        
