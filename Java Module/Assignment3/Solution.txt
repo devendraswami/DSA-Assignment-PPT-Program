@@ -1,0 +1,394 @@
+  
+  Q1.Write a simple Banking System program by using OOPs concept where you can get 
+     account Holder name balance etc?
+
+Answer 
+
+
+import java.util.Scanner; 
+
+class BankAccount {
+
+    private String accountHolder; 
+    private double balance;  
+    private int age; 
+
+    public BankAccount(String accountHolder , int age , double amount) {
+        this.accountHolder = accountHolder; 
+        balance = amount;  
+        this.age = age; 
+
+        System.out.println("Congratulation " + accountHolder +  " your account has been opened ");
+
+    }  
+
+    public void deposit(double amount) {
+        
+        balance += amount;
+        System.out.println("The amount has been successfullly deposited to your account Now you current balance is : " + balance);
+        
+    } 
+
+    public void withdraw(double amount) { 
+
+        if(amount > balance ) {
+            System.out.println("You do not have sufficinent funds to withdraw ");
+        } 
+            
+         else {
+        balance -= amount; 
+
+        System.out.println("The amount of " + amount + "Successfully Withdrawl from your Account Now your remaning balance is " + balance);
+         } 
+    } 
+
+    public void getBalance() {
+        System.out.println("Your Current Bank Balance is : " + balance);
+    }
+ 
+} 
+
+  class Bank {
+
+    public static void main(String[] args) { 
+ 
+
+      Scanner scan = new Scanner(System.in); 
+
+      System.out.println("Hello Welcome to our Bank "); 
+    
+
+     System.out.println("Entre Details to open your Account : "); 
+     System.out.println("Name : "); 
+     
+     String accoutHolder = scan.nextLine(); 
+
+     System.out.println("Age : "); 
+     int age = scan.nextInt();   
+
+     System.out.println("Your Bank account is just about to open. Please intilize your account by depositing some amount : " );
+      System.out.println("Entre the amount you want to deposit : ");
+     double amount = scan.nextDouble();
+ 
+     BankAccount newAccount = new BankAccount(accoutHolder, age , amount);  
+
+
+      // ask for the choices 
+       
+      do {
+        System.out.println("What would you like to do : "); 
+        System.out.println("1) check Balance "); 
+        System.out.println("2) Deposit "); 
+        System.out.println("3) withdraw "); 
+        System.out.println("4) exit "); 
+
+
+
+          
+      int cases = scan.nextInt(); 
+       
+     switch (cases) { 
+
+        case 1: newAccount.getBalance();  
+                 break; 
+
+        case 2: { System.out.println("Entre the amount : ");
+                 double amont = scan.nextDouble();
+                 newAccount.deposit(amont); 
+                 break; 
+                 } 
+                 
+         case 3:  {
+                    System.out.println("Entre the amount you want to withdraw "); 
+                    double amont = scan.nextDouble(); 
+                    newAccount.withdraw(amount);
+                    break; 
+
+              }      
+              
+          case 4: 
+                  { System.out.println("Thanks for Visiting our Bank ");
+                  System.exit(cases); } 
+
+          default: System.out.println("Invalid Input");        
+     }
+
+
+      }
+
+      while(true); 
+        
+        
+    }
+}
+
+
+
+
+
+
+
+/*Q2. Write a Program where you inherit method from parent class and show method Overridden Concept? */
+ 
+class Parent {
+
+    public void greet() {
+        System.out.println("Hello i am the Parent ");
+    }
+} 
+
+ 
+class child extends Parent {
+   @Override 
+   public void greet() {
+    System.out.println("Hello i am the child ");
+   }  
+}
+
+class Program { 
+    public static void main(String[] args) {
+         
+        Parent parent = new Parent(); 
+         parent.greet();
+          
+         // creating a child object by defining as parent type . 
+         Parent child = new child(); 
+          child.greet();
+
+    }
+}
+
+
+
+
+
+
+
+ 
+ /*Q3.Write a program to show run time polymorphism in java? 
+   
+ 
+ Answer   Method overriding in java is know as run time polymorphism . Method 
+           overriding allows a subclass to give different implemetation to a method 
+           which is already present in the class .  Overriden method should have same 
+           name, parameters and return type as parent class . 
+        
+  */
+
+ class Animal {
+    public void sound() {
+        System.out.println("Animals makes sound "); 
+
+    }
+ }
+ 
+  class Dog extends Animal {
+    @Override 
+    public void sound() {
+        System.out.println("Dogs Bark");
+    }
+  } 
+
+  class Cat extends Animal {
+    @Override 
+    public void sound() {
+        System.out.println("Cat mew");
+    }
+  }
+ 
+ class Program { 
+
+    
+    public static void main(String[] args) { 
+       
+        Animal animal1 = new Dog(); 
+        Animal animal2 = new Cat(); 
+
+        animal1.sound();
+        animal2.sound();
+       
+    }
+ }
+
+
+
+
+
+
+ 
+ /*Q4.Write a program to show Compile time polymorphism in java? 
+   
+ 
+ Answer   Method overLoading allows multiple methods with same name in a class but 
+          with different parameters. Complier will choose method accoriding to the basis 
+          of parameters  
+  */
+
+
+  class Calc {
+
+    public int add(int a , int b) {
+        return a+b; 
+    } 
+    public int add(int a , int b ,int c) {
+        return a+b+c; 
+    } 
+    public String add(String s , String t) {
+        return s+t; 
+    } 
+  }
+   
+  class program {
+    public static void main(String[] args) {
+        
+         Calc obj = new Calc(); 
+
+         System.out.println(obj.add(1, 02, 03)); 
+         System.out.println(obj.add(1, 02));
+         System.out.println(obj.add("Hi", "null"));
+         
+        
+    }
+  }
+
+
+
+
+  Q6. What is the benefit of encapsulation in java? 
+
+  Answer- 
+
+  Encapsulation is a fundamental concept in object-oriented programming that 
+  combines data and related behaviors (methods) into a single unit called a class. 
+
+  encapsulation ensures that internal state of an object is hidden from outside world. 
+  By declearing the data members private. 
+  Direct access to the data is restricted. 
+
+
+
+
+
+Q7.Is java  100% Object oriented Programming language? If no why ?
+
+
+Answer - 
+
+No, java is not considered as 100% object oriented programming language. Java is 
+considered as primarly object oriented programming language. It does include few 
+elements which are not strictly object oriented . 
+
+1. Primitive Data Types- 
+
+Java includes primitive data types. such as int, char , boolean, short, long etc which 
+are not objects and not derived from classes. and do not have associated methods and 
+behaviors like objects have. Java provides wrapper class(Boolean , Char, Integer ) to 
+use these as objects when needed. 
+
+
+2. Static Block - 
+
+The elements of static block are not considered as objects the. They belongs to the class 
+itself rather then instatces of the class. 
+
+3. Java contains main method where the execution starts is not associated with any 
+   object. 
+
+
+       
+
+Q8 What are the advantage of abstraction in java? 
+
+Answer- 
+
+Abstraction is an essential concept in Java and object-oriented programming (OOP) 
+that involves focusing on essential characteristics and behaviors while hiding 
+unnecessary details.  
+
+Advantage of abstraction in java- 
+
+1. Code reuseablity 
+2. Easy to understand the code. 
+3. Abstraction simplfies the complex code into simple and organised. 
+ 
+
+
+
+
+
+Q9.What is an abstraction explained with an Example? 
+
+
+Answer- 
+
+
+
+
+abstract class Vehicle {
+
+    private String name; 
+    private String model; 
+
+    public Vehicle(String name, String model) {
+        this.name = name; 
+        this.model = model;
+    } 
+
+    public abstract void start();  
+
+    public abstract void stop(); 
+
+    public void gotDetails() {
+        System.out.println("Name :  " + name);
+        System.out.println("model : " + model );
+    }
+} 
+
+
+class Car extends Vehicle {
+
+    public Car(String name, String model) {
+        super(name, model);
+        //TODO Auto-generated constructor stub
+    }
+
+    @Override
+    public void start() {
+        System.out.println("The Car has been Started ");
+    }
+
+    @Override
+    public void stop() {
+       System.out.println("The Car Engine has been Stoped ");
+    }
+    
+}
+
+
+
+class program 
+{
+    public static void main(String[] args) {
+        
+
+        Vehicle obj = new Car("Toyota", "Fortuner"); 
+        obj.start();
+        obj.gotDetails();
+        obj.stop();
+    }
+}
+
+
+
+Q10.What is the final class in Java? 
+
+Answer - 
+
+Final class in java is the class which would not further participate in inheritance. final keyword is 
+used to declear a class as final. 
+
+Syntax- 
+
+final class FinalClass {
+    // code 
+}
