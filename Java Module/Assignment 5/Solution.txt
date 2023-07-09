@@ -1,0 +1,293 @@
+Q1.What is Exception in Java? 
+
+Answer- 
+
+Exception in java is an event which occurs while the execution of the program. and 
+distrupts the flow of program. If we do not handle the the exception the program will 
+not do execute further. 
+
+We can handle the execption or duck the exception. 
+
+
+Q2.What is Exception Handling? 
+
+Answer-  
+
+If we get an execption while the run-time then the execution of code will stop. The 
+further code will not be executed so to avoid this problem we handle the exception 
+so that the execution of code will not stop. 
+
+
+In java we handle the exception by using try-catch block.  In try block we put the 
+complex statements which can throw execption. if in case it throws exception catch 
+block will catch it.   
+
+
+
+Q3.What is the difference between Checked and Unchecked Exceptions and Error? 
+
+
+Answer- 
+
+Checked Exception-  
+
+Checked Exception are those exception which compiler will check itself while compile time and 
+force you to handle.  
+
+example - IOException, SQLException, ClassNOtFoundException 
+
+
+Unchecked Exception - 
+
+Unchecked Exception are those Exception which compile will not force you to handle. 
+These are run time Exception. 
+Examples - ArraysIndexOutOfBondsException, NullPointerExcepition, Airthmetic Exception
+
+
+Errors-  
+
+Errors represents exceptional conditions which are typically beyond controls. These are
+basically Unchecked basically Unchecked exceptions but program cann't handle errors . 
+
+example- StackOverFlowError , OutOfMemoryError, IOError 
+
+
+
+
+Question4 What are the difference between throw and throws in java? 
+
+Answer-  
+
+ Throw -  
+
+  "throw " is used to explicitly throw an exception in java. 
+  It is used within the code to indicate that a specific execption has occured or need 
+  to thrown manually. 
+
+  public void divide(int dividend, int divisor) {
+    if (divisor == 0) {
+        throw new ArithmeticException("Divisor cannot be zero");
+    }
+    // Perform division if divisor is non-zero
+}
+ 
+
+
+ Thrown- 
+
+ It is used with method defenition to indicate that this method can throw an exception 
+ which is not handled and needs to handle by whoever is calling the method. 
+
+ Example- 
+
+ public void divide(int dividend,divisior) throws ArithmeticException {
+
+    int result = dividend/divisor; 
+    System.out.println(result); 
+
+ }
+
+
+
+
+Question 5 What is multiThreading in Java. write its adavantages.  
+
+Answer- 
+
+multiThreading in java refers to the concurrent execution of multiple threads in single 
+program.  
+
+Advantages of MultiThreading is - 
+
+1. It makes the execution of program more efficient. 
+2. Every Thread has given different independent task so it saves the cpu's time. 
+
+
+
+
+Q6.Write a program to create and call a custom exception.  
+
+
+
+ class MyCustomException extends Exception {
+    
+     public MyCustomException(String Message) {
+        
+        super(Message); 
+     }
+        
+ }
+
+
+ public class Test {
+    public static void main(String[] args) {
+         
+        try {
+            process(10);
+            process(-5);
+        }
+         catch(MyCustomException e) {
+               System.out.println(e.getMessage());
+        }
+    } 
+ 
+    public static void process(int n) throws MyCustomException {
+          if(n<0) {
+            throw new MyCustomException("Invalid Input ");
+          } else {
+            System.out.println(n);
+          }
+    }
+
+ } 
+
+
+
+
+
+ Q7.How can you handle exceptions in Java?  
+
+ Answer- 
+ 
+ In java we can handle the Exception by using try and catch block. we put the complex 
+ statements in try block and catch block will handle the exception if found 
+
+ for example -  
+
+
+  
+
+ class Test {
+    public static void main(String[] args) {
+        
+       int num1 = 5; 
+       int num2 = 0; 
+
+
+        try {
+             int result = num1/num2;  
+             System.out.println(result);
+
+        } catch(ArithmeticException e) {
+            System.out.println("Something went wrong ");
+        } 
+
+        System.out.println("Main thread Execution Completed ");
+    }
+ }
+
+ 
+
+ Q8.What is Thread in Java? 
+
+ Answer- 
+
+ Thread is a line of Execution in java.  
+
+
+
+ Q9. What are the two ways of implementing thread in java? 
+
+ Answer- 
+
+ Two ways of implementing thread in java are- 
+
+ 1. By Extending Thread class-  
+
+      We can implementing thread by extending Thread class. But one disadvantage of 
+      this is that we can not extend another class to our Thread because java do not 
+      allow multiple inheritance. 
+
+      for Example- 
+
+     
+  class MyThread extends Thread {
+    
+    public void run() {
+        System.out.println("MyThread Started "); 
+
+        for(int i = 0; i<4; i++) {
+            System.out.println("Focous is important ");
+            try {
+                Thread.sleep(2000);
+            } catch (InterruptedException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        }  
+    }
+
+  }
+
+ class Test {
+    public static void main(String[] args) throws InterruptedException {
+        
+        System.out.println("Main Thread Started "); 
+
+        MyThread t1 = new MyThread(); 
+        t1.start(); 
+        t1.join();
+
+        System.out.println("Main Thread Ended ");
+       
+
+    }
+ } 
+
+
+
+
+ 2. By implementing Runnable interface -  
+
+  This is the prefarred way to implement Thread because inteface allow multiple inheritance. 
+   
+
+   Example- 
+
+    
+  class MyThread implements Runnable {
+    
+    public void run() {
+        System.out.println("MyThread Started "); 
+
+        for(int i = 0; i<4; i++) {
+            System.out.println("Focous is important ");
+            try {
+                Thread.sleep(2000);
+            } catch (InterruptedException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        }  
+    }
+
+  }
+
+ class Test {
+    public static void main(String[] args) throws InterruptedException {
+        
+        System.out.println("Main Thread Started "); 
+       
+        MyThread t1 = new MyThread();  
+        Thread s1 = new Thread(t1); 
+        
+
+         
+        s1.start();
+         s1.join();
+
+        System.out.println("Main Thread Ended ");
+       
+
+    }
+ } 
+
+
+
+ Q10.What do you mean by garbage collection? 
+
+ Answer- 
+
+ Garbage collection is autometic memory Management process in java. Garbage Collector 
+ autometcally clean the memory which is no longer in use. Freeing it up for the fucture 
+ allocation. 
