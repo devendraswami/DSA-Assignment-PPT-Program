@@ -1,0 +1,186 @@
+
+
+Que1 What is Collection in java ? 
+
+Answer- 
+
+Collection in java is framework which was introduced in java in 1.2 Version. It provides 
+a set of inbulit intefaces, classes, Which are used to Store the data, manupuliate the 
+data, retrive the data , add the data and delete the data. 
+
+Advantages of Collection-  
+
+1. We can store the large data and perform operation on it. 
+2. We can Store Hetrogeneous Type of data. 
+3. Dynamic in nature(Means tha we can change the size). 
+4. We donot have to create methods and classes. we just need to implement. 
+
+
+
+2. Differentiate between Collection and collections in the context of Java. 
+
+
+Answer-  
+
+Collection-  
+
+
+Collection in java is framework which was introduced in java in 1.2 Version. It provides 
+a set of inbulit intefaces, classes, Which are used to Store the data, manupuliate the 
+data, retrive the data , add the data and delete the data. 
+
+
+
+Collections- 
+
+It repreasents a generic reference of multiple objects grouped together in a Collection
+data structure. 
+
+
+
+
+Q3. What are the advantages of the Collection framework?
+
+Answer- 
+
+Advantages of Collection-  
+
+1. We can store the large data and perform operation on it. 
+2. We can Store Hetrogeneous Type of data. 
+3. Dynamic in nature(Means tha we can change the size). 
+4. We donot have to create methods and classes. we just need to implement. 
+
+
+
+Q4.Explain the various interfaces used in the Collection framework. 
+
+
+Answer- 
+
+Collection FrameWork provides several interface that define different 
+type of collections and their behaviours. 
+
+1. Collection : 
+      
+     1. Base interface for all Collection in java. 
+     2. That provide basic operation like adding , removing and accessing 
+         elements. 
+     3. SubInterfaces of Collection include in are List, Set and Queue.
+
+
+2. List : 
+        
+        1. An ordered  Collection that does allow duplicate elements. 
+        2. Elements in a list are indexed and can be accessed by their position.
+        3. Key implementations of List are ArrayList,LinkedList, and Vector. 
+
+3. Set :  
+        
+        1. A Collection that does not allow duplicate elements. 
+        2. It does not provide positioal access to elements. 
+        3. Key implementations of Set are HashSet and LinkedHashSet. 
+        4. SortedSet is a subinterface of Set that maintatins the elements in a sorted
+            oreder. 
+        
+
+4.  Queue :  
+         
+         1. A Collection designed for holding elements prior to processing. 
+         2. It follows the First-In-First-Out(FIFO) principle. 
+         3. Key implementations of Queue are LinkedList and PriorityQueue. 
+         4. Deque(Double ended Queue) is an inteface that extends Queue and allows elements 
+            to be inserted and removed from both ends. 
+
+
+
+Q5.Differentiate between List and Set in Java. 
+
+
+Answer-  
+          
+
+          
+1. List : 
+        
+        1. An ordered  Collection that does allow duplicate elements. 
+        2. Elements in a list are indexed and can be accessed by their position.
+        3. Key implementations of List are ArrayList,LinkedList, and Vector. 
+
+2. Set :  
+        
+        1. A Collection that does not allow duplicate elements. 
+        2. It does not provide positioal access to elements. 
+        3. Key implementations of Set are HashSet and LinkedHashSet. 
+        4. SortedSet is a subinterface of Set that maintatins the elements in a sorted
+            oreder.  
+
+
+
+
+Q6.What is the Difference between Iterator and ListIterator in Java. 
+
+Answer- 
+
+
+ Iterator is a simpler interface that supports forward-only traversal and limited modification
+  capabilities, whereas ListIterator is a more advanced interface that supports bidirectional 
+  traversal, modification of elements, and is specifically designed for List implementations.
+
+
+  Q7. What is Comperator and Comperable inteface in java? 
+
+  Answer- 
+
+  Comparable is an interface used for natural ordering or default sorting of objects.
+   It is implemented by the class of objects being compared and requires the overriding 
+   of the compareTo() method. 
+
+
+Comparator is an interface used for custom sorting or ordering of objects. It allows the 
+definition of multiple sorting criteria and can be implemented separately from the class 
+being compared. It requires the overriding of the compare() method. 
+
+
+
+
+Q8. What is Collision in HashMap? 
+
+Answer- 
+
+
+In a HashMap, collision occurs when two or more different keys hash to the same index or 
+bucket. In other words, multiple key-value pairs are mapped to the same location in the 
+underlying array structure of the HashMap. This situation is inevitable due to the finite
+ number of buckets and the potentially infinite number of keys.
+
+When a collision happens, the HashMap employs a technique called "chaining" to handle it. 
+Chaining means that each bucket in the HashMap can hold multiple key-value pairs by using 
+a linked list or other data structure. When a collision occurs, the new key-value pair is 
+added to the linked list at the corresponding bucket.
+
+
+
+
+Q9. Distinguish between HashMap and TreeMap ? 
+
+Answer- 
+
+HashMap does not maintain any specific order of keys, provides fast lookup, and allows null keys.
+ It is suitable for efficient key-value lookups based on hash codes. 
+
+TreeMap maintains keys in sorted order, has slower lookup times, does not allow null keys, 
+and provides automatic sorting based on natural ordering or a custom Comparator. It is suitable 
+when keys need to be sorted or accessed in a specific order.
+
+ 
+
+ Q10. What is LinkedHashMap in java? 
+ 
+
+
+ Answer- 
+
+ LinkedHashMap is a class in Java that extends HashMap and provides a predictable iteration order 
+ based on insertion order or access order. It combines the features of a HashMap and a LinkedList
+  to provide efficient key-value lookups along with maintaining the order of elements.
+
